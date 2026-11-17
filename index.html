@@ -16,10 +16,10 @@ a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1.5px}
 a:hover{color:var(--orange)}
 :focus-visible{outline:2px solid var(--orange);outline-offset:3px}
 main{border-top:4px solid var(--ink);display:flex;flex-direction:column}
-.mark{font-weight:800;font-stretch:100%;letter-spacing:-.06em;line-height:.8;font-size:calc((100vw - 2*var(--gut))/6.9);margin:clamp(24px,5vw,64px) 0 clamp(24px,4vw,48px) -.04em;white-space:nowrap}
+.mark{font-weight:800;font-stretch:100%;letter-spacing:-.06em;line-height:.8;font-size:calc((100vw - 2*var(--gut))/6.9);margin:clamp(16px,3svh,48px) 0 clamp(16px,3svh,40px) -.04em;white-space:nowrap}
 .mark>span{display:inline-block}
 .mark .dot{color:var(--orange)}
-.claim{position:relative;font-size:clamp(30px,5vw,72px);line-height:1;font-weight:400;font-stretch:84%;letter-spacing:-.03em;max-width:16em}
+.claim{position:relative;font-size:clamp(28px,min(5vw,6.5svh),72px);line-height:1;font-weight:400;font-stretch:84%;letter-spacing:-.03em;max-width:16em}
 .claim .l{display:block;word-spacing:.04em}
 .A{display:inline-block;line-height:1;margin-right:.01em;transition:font-stretch .5s var(--in),font-weight .5s var(--in)}
 .a1{font-weight:900;font-stretch:125%;color:transparent;background:radial-gradient(circle,var(--orange) 46%,transparent 48%) 0 0/5px 5px,var(--yellow);-webkit-background-clip:text;background-clip:text}
@@ -31,9 +31,9 @@ main{border-top:4px solid var(--ink);display:flex;flex-direction:column}
 .tear *{color:inherit!important;background:none!important;-webkit-text-stroke:0!important;text-shadow:none!important}
 .tear.o{color:var(--orange);clip-path:inset(38% 0 50% 0);transform:translateX(-7px)}
 .tear.c{color:var(--cyan);clip-path:inset(70% 0 21% 0);transform:translateX(6px)}
-.sub{margin-top:clamp(24px,3vw,40px);padding-top:.6rem;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;font-weight:500}
-.wip{margin-top:auto;padding-top:clamp(32px,5vw,64px);font-weight:900;font-stretch:125%;letter-spacing:-.04em;line-height:.78;font-size:clamp(96px,24vw,360px);color:var(--orange)}
-footer{display:flex;gap:var(--gut);margin-top:clamp(24px,3vw,40px);border-top:1px solid var(--ink);padding-top:.6rem;font-size:.85em}
+.sub{margin-top:clamp(16px,3svh,40px);padding-top:.6rem;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;font-weight:500}
+.wip{margin-top:auto;padding-top:16px;font-weight:900;font-stretch:125%;letter-spacing:-.04em;line-height:.78;font-size:min(24vw,22svh);color:transparent;background:radial-gradient(circle,var(--orange) 42%,transparent 46%) 0 0/.045em .045em;-webkit-background-clip:text;background-clip:text}
+footer{display:flex;gap:var(--gut);margin-top:clamp(12px,2svh,32px);border-top:1px solid var(--ink);padding-top:.6rem;font-size:.85em}
 /* plain first, then the glitch once */
 .js-plain .tear{opacity:0}
 .js-plain .A{color:var(--ink)!important;background:none!important;-webkit-text-stroke:0!important;text-shadow:none!important;font-weight:400!important;font-stretch:84%!important;transform:none!important}
@@ -58,7 +58,7 @@ footer{display:flex;gap:var(--gut);margin-top:clamp(24px,3vw,40px);border-top:1p
  <a href="datenschutz.html">Datenschutz</a>
 </footer>
 <script>
-{const mk=document.querySelector('.mark'),fit=()=>{mk.style.fontSize='';const w=mk.parentElement.clientWidth,s=mk.firstElementChild.getBoundingClientRect().width;if(s)mk.style.fontSize=parseFloat(getComputedStyle(mk).fontSize)*w/s*.99+'px'};document.fonts.ready.then(fit);addEventListener('resize',fit);}
+{const mk=document.querySelector('.mark'),fit=()=>{mk.style.fontSize='';const w=mk.parentElement.clientWidth,s=mk.firstElementChild.getBoundingClientRect().width;if(s)mk.style.fontSize=Math.min(parseFloat(getComputedStyle(mk).fontSize)*w/s*.99,innerHeight*.2)+'px'};document.fonts.ready.then(fit);addEventListener('resize',fit);}
 {const root=document.documentElement,el=document.getElementById('claim'),h=el.innerHTML;
 for(const k of ['o','c']){const t=document.createElement('span');t.className='tear '+k;t.setAttribute('aria-hidden','true');t.innerHTML=h;el.appendChild(t)}
 const As=el.querySelectorAll(':scope>.l .A');

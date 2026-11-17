@@ -1,0 +1,62 @@
+<!doctype html>
+<!-- Idee A: streng typografisch, Schweizer Raster; das Wort aaaaa.studio fuellt die ganze Breite, ein einziges Rot. -->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>aaaaa.studio, Alexej Alschiz</title>
+<meta name="description" content="Objekte, Räume und Installationen. Entworfen und gebaut in Berlin.">
+<style>
+:root{--paper:#fff;--ink:#000;--red:#d4001f;--grey:#595959;--gut:clamp(16px,3vw,40px)}
+@media (prefers-color-scheme:dark){:root{--paper:#000;--ink:#fff;--red:#ff4a5e;--grey:#a8a8a8}}
+*{box-sizing:border-box;margin:0}
+html{background:var(--paper)}
+body{min-height:100vh;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;color:var(--ink);background:var(--paper);
+ font-family:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",sans-serif;font-size:clamp(17px,1.5vw,22px);line-height:1.35;padding:var(--gut)}
+.top{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut);border-top:4px solid var(--ink);padding-top:.6rem;font-weight:700}
+.top .who{grid-column:1/7}
+.top .where{grid-column:7/13;color:var(--grey);font-weight:400}
+.mark{align-self:center;font-weight:700;letter-spacing:-.065em;line-height:.8;font-size:calc((100vw - 2*var(--gut))/5.45);margin:3rem 0 3rem -.04em;white-space:nowrap}
+.mark .a{color:var(--ink)}
+.mark .a:nth-child(5){color:var(--red)}
+.mark .dot{color:var(--red)}
+.cols{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut);align-items:start}
+.claim{grid-column:1/7;min-width:0;font-weight:700;font-size:clamp(22px,2.6vw,38px);line-height:1.12;letter-spacing:-.02em;max-width:22ch}
+.contact{grid-column:7/10}
+.note{grid-column:10/13;color:var(--grey)}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:2px}
+a:hover{color:var(--red)}
+a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+footer{display:flex;gap:var(--gut);margin-top:4rem;border-top:1px solid var(--ink);padding-top:.6rem;font-size:.8em}
+@media (max-width:760px){
+ .top .who,.top .where{grid-column:1/-1}
+ .mark{margin:2.5rem 0}
+ .claim,.contact,.note{grid-column:1/-1}
+ .cols{row-gap:1.5rem}
+}
+@media (prefers-reduced-motion:no-preference){
+ .mark .a{animation:in .9s cubic-bezier(.2,.7,.2,1) backwards}
+ .mark .a:nth-child(2){animation-delay:.08s}.mark .a:nth-child(3){animation-delay:.16s}.mark .a:nth-child(4){animation-delay:.24s}.mark .a:nth-child(5){animation-delay:.32s}
+ @keyframes in{from{opacity:0;transform:translateY(.25em)}}
+}
+</style>
+</head>
+<body>
+<header class="top">
+ <p class="who">Alexej Alschiz</p>
+ <p class="where">Stahlwerkstatt und Studio, Malzfabrik, Berlin</p>
+</header>
+<main>
+ <h1 class="mark" aria-label="aaaaa.studio"><span class="a" aria-hidden="true">a</span><span class="a" aria-hidden="true">a</span><span class="a" aria-hidden="true">a</span><span class="a" aria-hidden="true">a</span><span class="a" aria-hidden="true">a</span><span class="dot" aria-hidden="true">.</span><span aria-hidden="true">studio</span></h1>
+ <div class="cols">
+  <p class="claim" lang="en">Analysis, Architecture, Assembly &amp; Anthropic Advancement</p>
+  <p class="contact"><a href="mailto:aa@aaaaa.studio">aa@aaaaa.studio</a></p>
+  <p class="note">Die Seite wächst gerade.</p>
+ </div>
+</main>
+<footer>
+ <a href="impressum.html">Impressum</a>
+ <a href="datenschutz.html">Datenschutz</a>
+</footer>
+</body>
+</html>

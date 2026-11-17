@@ -1,62 +1,69 @@
 <!doctype html>
-<!-- Idee A: streng typografisch, Schweizer Raster; das Wort aaaaa.studio fuellt die ganze Breite, ein einziges Rot. -->
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>aaaaa.studio, Alexej Alschiz</title>
-<meta name="description" content="Objekte, Räume und Installationen. Entworfen und gebaut in Berlin.">
+<title>aaaaa.studio: Design and Production Studio Berlin</title>
+<meta name="description" content="Analysis, Architecture, Assembly & Anthropic Advancement. Design and production studio in Berlin. Work in progress.">
+<script>{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js-plain')}</script>
 <style>
-:root{--paper:#fff;--ink:#000;--red:#d4001f;--grey:#595959;--gut:clamp(16px,3vw,40px)}
-@media (prefers-color-scheme:dark){:root{--paper:#000;--ink:#fff;--red:#ff4a5e;--grey:#a8a8a8}}
-*{box-sizing:border-box;margin:0}
+@font-face{font-family:"Archivo";src:url(fonts/archivo-wdth.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{--paper:#F1F1EC;--ink:#171615;--ink-2:#5E5C58;--line:rgba(23,22,21,.14);--orange:#FF5B1F;--cyan:#00A0DC;--yellow:#FFDD00;--gut:clamp(16px,3vw,40px);--in:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box;margin:0;padding:0}
 html{background:var(--paper)}
-body{min-height:100vh;min-height:100svh;display:grid;grid-template-rows:auto 1fr auto;color:var(--ink);background:var(--paper);
- font-family:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",sans-serif;font-size:clamp(17px,1.5vw,22px);line-height:1.35;padding:var(--gut)}
-.top{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut);border-top:4px solid var(--ink);padding-top:.6rem;font-weight:700}
-.top .who{grid-column:1/7}
-.top .where{grid-column:7/13;color:var(--grey);font-weight:400}
-.mark{align-self:center;font-weight:700;letter-spacing:-.065em;line-height:.8;font-size:calc((100vw - 2*var(--gut))/5.45);margin:3rem 0 3rem -.04em;white-space:nowrap}
-.mark .a{color:var(--ink)}
-.mark .a:nth-child(5){color:var(--red)}
-.mark .dot{color:var(--red)}
-.cols{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gut);align-items:start}
-.claim{grid-column:1/7;min-width:0;font-weight:700;font-size:clamp(22px,2.6vw,38px);line-height:1.12;letter-spacing:-.02em;max-width:22ch}
-.contact{grid-column:7/10}
-.note{grid-column:10/13;color:var(--grey)}
-a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:2px}
-a:hover{color:var(--red)}
-a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
-footer{display:flex;gap:var(--gut);margin-top:4rem;border-top:1px solid var(--ink);padding-top:.6rem;font-size:.8em}
-@media (max-width:760px){
- .top .who,.top .where{grid-column:1/-1}
- .mark{margin:2.5rem 0}
- .claim,.contact,.note{grid-column:1/-1}
- .cols{row-gap:1.5rem}
-}
-@media (prefers-reduced-motion:no-preference){
- .mark .a{animation:in .9s cubic-bezier(.2,.7,.2,1) backwards}
- .mark .a:nth-child(2){animation-delay:.08s}.mark .a:nth-child(3){animation-delay:.16s}.mark .a:nth-child(4){animation-delay:.24s}.mark .a:nth-child(5){animation-delay:.32s}
- @keyframes in{from{opacity:0;transform:translateY(.25em)}}
-}
+body{min-height:100svh;display:grid;grid-template-rows:1fr auto;padding:var(--gut);color:var(--ink);background:var(--paper);font:400 clamp(16px,1.3vw,20px)/1.4 "Archivo",system-ui,sans-serif}
+a{color:inherit;text-underline-offset:.18em;text-decoration-thickness:1.5px}
+a:hover{color:var(--orange)}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+main{border-top:4px solid var(--ink);display:flex;flex-direction:column}
+.mark{font-weight:800;font-stretch:100%;letter-spacing:-.06em;line-height:.8;font-size:calc((100vw - 2*var(--gut))/6.9);margin:clamp(24px,5vw,64px) 0 clamp(24px,4vw,48px) -.04em;white-space:nowrap}
+.mark>span{display:inline-block}
+.mark .dot{color:var(--orange)}
+.claim{position:relative;font-size:clamp(30px,5vw,72px);line-height:1;font-weight:400;font-stretch:84%;letter-spacing:-.03em;max-width:16em}
+.claim .l{display:block;word-spacing:.04em}
+.A{display:inline-block;line-height:1;margin-right:.01em;transition:font-stretch .5s var(--in),font-weight .5s var(--in)}
+.a1{font-weight:900;font-stretch:125%;color:transparent;background:radial-gradient(circle,var(--orange) 46%,transparent 48%) 0 0/5px 5px,var(--yellow);-webkit-background-clip:text;background-clip:text}
+.a2{font-weight:800;font-stretch:62%;color:transparent;background:repeating-linear-gradient(-45deg,var(--ink) 0 2px,transparent 2px 5px);-webkit-background-clip:text;background-clip:text}
+.a3{font-weight:300;font-stretch:118%;color:transparent;-webkit-text-stroke:1.5px var(--cyan)}
+.a4{font-weight:700;font-stretch:90%;color:var(--orange);transform:rotate(180deg)}
+.a5{font-weight:900;color:var(--yellow);-webkit-text-stroke:1.5px var(--ink);text-shadow:4px 0 0 var(--cyan)}
+.tear{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply}
+.tear *{color:inherit!important;background:none!important;-webkit-text-stroke:0!important;text-shadow:none!important}
+.tear.o{color:var(--orange);clip-path:inset(38% 0 50% 0);transform:translateX(-7px)}
+.tear.c{color:var(--cyan);clip-path:inset(70% 0 21% 0);transform:translateX(6px)}
+.sub{margin-top:clamp(24px,3vw,40px);padding-top:.6rem;border-top:1px solid var(--ink);display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;font-weight:500}
+.wip{margin-top:auto;padding-top:clamp(32px,5vw,64px);font-weight:900;font-stretch:125%;letter-spacing:-.04em;line-height:.78;font-size:clamp(96px,24vw,360px);color:var(--orange)}
+footer{display:flex;gap:var(--gut);margin-top:clamp(24px,3vw,40px);border-top:1px solid var(--ink);padding-top:.6rem;font-size:.85em}
+/* plain first, then the glitch once */
+.js-plain .tear{opacity:0}
+.js-plain .A{color:var(--ink)!important;background:none!important;-webkit-text-stroke:0!important;text-shadow:none!important;font-weight:400!important;font-stretch:84%!important;transform:none!important}
+.tearing .tear.o{animation:jumpO .6s steps(6,end) both}
+.tearing .tear.c{animation:jumpC .6s steps(6,end) both}
+@keyframes jumpO{0%{opacity:1;clip-path:inset(10% 0 80% 0);transform:translateX(-24px)}50%{clip-path:inset(60% 0 25% 0);transform:translateX(14px)}100%{opacity:1;clip-path:inset(38% 0 50% 0);transform:translateX(-7px)}}
+@keyframes jumpC{0%{opacity:1;clip-path:inset(80% 0 5% 0);transform:translateX(20px)}50%{clip-path:inset(20% 0 66% 0);transform:translateX(-12px)}100%{opacity:1;clip-path:inset(70% 0 21% 0);transform:translateX(6px)}}
+.A.morph{animation:morph .9s steps(4,end)}
+@keyframes morph{0%{font-stretch:62%;font-weight:900}33%{font-stretch:125%;font-weight:200}66%{font-stretch:80%;font-weight:700}100%{}}
+@media (max-width:639px){.claim{font-stretch:72%}.tear.o{transform:translateX(-4px)}.tear.c{transform:translateX(4px)}}
 </style>
 </head>
 <body>
-<header class="top">
- <p class="who">Alexej Alschiz</p>
- <p class="where">Stahlwerkstatt und Studio, Malzfabrik, Berlin</p>
-</header>
 <main>
- <h1 class="mark" aria-label="aaaaa.studio"><span class="a" aria-hidden="true">a</span><span class="a" aria-hidden="true">a</span><span class="a" aria-hidden="true">a</span><span class="a" aria-hidden="true">a</span><span class="a" aria-hidden="true">a</span><span class="dot" aria-hidden="true">.</span><span aria-hidden="true">studio</span></h1>
- <div class="cols">
-  <p class="claim" lang="en">Analysis, Architecture, Assembly &amp; Anthropic Advancement</p>
-  <p class="contact"><a href="mailto:aa@aaaaa.studio">aa@aaaaa.studio</a></p>
-  <p class="note">Die Seite wächst gerade.</p>
- </div>
+ <h1 class="mark" aria-label="aaaaa.studio"><span aria-hidden="true">aaaaa<span class="dot">.</span>studio</span></h1>
+ <p class="claim" id="claim"><span class="l"><span class="A a1">A</span>nalysis, <span class="A a2">A</span>rchitecture,</span><span class="l"><span class="A a3">A</span>ssembly &amp; <span class="A a4">A</span>nthropic</span><span class="l"><span class="A a5">A</span>dvancement</span></p>
+ <p class="sub"><span>Design and Production Studio Berlin</span><a href="mailto:aa@aaaaa.studio">aa@aaaaa.studio</a></p>
+ <p class="wip" aria-label="Work in progress">WIP</p>
 </main>
 <footer>
  <a href="impressum.html">Impressum</a>
  <a href="datenschutz.html">Datenschutz</a>
 </footer>
+<script>
+{const mk=document.querySelector('.mark'),fit=()=>{mk.style.fontSize='';const w=mk.parentElement.clientWidth,s=mk.firstElementChild.getBoundingClientRect().width;if(s)mk.style.fontSize=parseFloat(getComputedStyle(mk).fontSize)*w/s*.99+'px'};document.fonts.ready.then(fit);addEventListener('resize',fit);}
+{const root=document.documentElement,el=document.getElementById('claim'),h=el.innerHTML;
+for(const k of ['o','c']){const t=document.createElement('span');t.className='tear '+k;t.setAttribute('aria-hidden','true');t.innerHTML=h;el.appendChild(t)}
+const As=el.querySelectorAll(':scope>.l .A');
+if(root.classList.contains('js-plain'))setTimeout(()=>{root.classList.add('tearing');root.classList.remove('js-plain');As.forEach((a,i)=>setTimeout(()=>a.classList.add('morph'),i*90));setTimeout(()=>root.classList.remove('tearing'),1400)},1100);
+As.forEach(a=>{a.addEventListener('mouseenter',()=>{a.classList.remove('morph');void a.offsetWidth;a.classList.add('morph')});a.addEventListener('animationend',()=>a.classList.remove('morph'))});}
+</script>
 </body>
 </html>
